@@ -1,0 +1,118 @@
+html
+	font-size: 16px
+	line-height: 1.3em
+	color: $dblue
+	font-family: 'NotoSans', 'Poppins', sans-serif
+	font-style: normal
+	font-weight: normal
+	-webkit-tap-highlight-color: transparent
+	-webkit-font-smoothing: antialiased
+	overflow-x: hidden
+	scroll-behavior: smooth
+	&.scroll
+		width: calc(100% - 5px)
+		overflow: hidden
+	&::-webkit-scrollbar
+		width: 5px
+	&::-webkit-scrollbar-thumb
+		background: $dblue
+		width: 5px
+		border-radius: 5px
+	&::-webkit-scrollbar-track
+		background: rgba(0,0,0,0)
+		width: 5px
+
+@media only screen and (max-width: 576px)
+	html
+		&.scroll
+			width: 100%
+
+body
+	position: relative
+	display: flex
+	flex-direction: column
+	z-index: 1
+	min-height: 100vh
+	background: $background
+
+main
+	flex: 1
+	
+*,
+::after,
+::before
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+
+button,
+input,
+textarea
+	border: 0
+	background: transparent
+	&:focus
+		outline: none
+
+textarea
+	resize: none
+
+input[type='text'],
+textarea
+	background-clip: padding-box
+
+address
+	font-style: normal
+
+button
+	cursor: pointer
+
+ul
+	list-style: none
+
+a
+	text-decoration: none
+	cursor: pointer
+
+img
+	display: block
+
+.container,
+.container-column
+	width: 100%
+	margin: 0 auto
+	padding: 0 20px
+	display: flex
+	z-index: 2
+	position: relative
+	max-width: $container
+.container-column
+	flex-direction: column
+
+section
+	position: relative
+
+.dn
+	display: none !important
+
+svg
+	rect
+		fill: inherit
+
+.page-enter-active,
+.page-leave-active
+	transition: opacity .5s
+.page-enter,
+.page-leave-to 
+	opacity: 0
+
+.layout-enter-active,
+.layout-leave-active
+	transition: opacity .5s
+.layout-enter,
+.layout-leave-to 
+	opacity: 0
+
+.page-wrapper
+	min-height: 100vh
+	display: flex
+	flex-direction: column
