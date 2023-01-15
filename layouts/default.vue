@@ -43,6 +43,6 @@
     display: flex
     flex-direction: column
     align-items: flex-start
-    padding: 2em
+    padding: em(90, 16) em(30, 16) 0
     width: 100%
 </style>
