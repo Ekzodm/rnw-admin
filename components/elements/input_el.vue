@@ -28,7 +28,7 @@ export default {
     padding: em(12, 16) 1em
     width: 100%
     border-radius: em(30, 16)
-    font: font(16, 24, 400, 'NotoSans')
+    font: font(16, 24, 400)
     border: 1px solid transparent
     &::placeholder
       color: $placeholder
@@ -36,7 +36,7 @@ export default {
       border-color: $red
   &_error
     color: $red
-    font: font(12, 15, 400, 'NotoSans')
+    font: font(12, 15, 400)
     display: block
     position: absolute
     left: 105%

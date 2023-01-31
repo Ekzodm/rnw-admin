@@ -1,5 +1,5 @@
 <template lang="pug">
-.statistic-count_item
+.count-item
   template(v-if='pending')
     StatisticCountPreloaderEl
   template(v-else-if='error')
@@ -23,7 +23,7 @@ const { pending, data, error, refresh } = !!props.path ? await auth_request(prop
 </script>
 
 <style lang="sass" scoped>
-.statistic-count_item
+.count-item
   background: $white
   flex: 1
   border-radius: em(20, 16)

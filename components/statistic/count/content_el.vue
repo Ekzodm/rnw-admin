@@ -1,8 +1,8 @@
 <template lang="pug">
-.statistic-count_content
-  .statistic-count_content-title
+.count-item_content
+  .count-item_content-title
     span {{params?.title}}
-  .statistic-count_content-value
+  .count-item_content-value
     span {{data}} {{params?.description}}
 </template>
 
@@ -16,7 +16,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass" scoped>
-.statistic-count_content
+.count-item_content
   display: flex
   flex-direction: column
   align-items: flex-start

@@ -1,5 +1,5 @@
 <template lang="pug">
-.statistic-count
+.count
   StatisticCountItemEl(v-for='item, idx in statistic' :key='idx' :params='item?.params' :path='item?.path')
 </template>
 
@@ -12,11 +12,10 @@ const props = defineProps({
 </script>
 
 <style lang="sass" scoped>
-.statistic-count
-  margin-top: em(60, 16)
+.count
   display: flex
   align-items: center
   gap: em(30, 16)
-  max-width: 996px
+  max-width: 966px
   width: 100%
 </style>

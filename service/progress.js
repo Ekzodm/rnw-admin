@@ -1,0 +1,1 @@
+export const progress = (data, type) => data && data.map(i => ({ title: i?.name, taped: i?.taped }))

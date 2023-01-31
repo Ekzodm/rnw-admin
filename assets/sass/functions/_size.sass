@@ -3,7 +3,7 @@
 @function em($new_px, $base_px)
   @return math.div(math.floor(math.div($new-px, $base-px) * 100), 100) + em
 
-@function font($fz, $lh, $fw, $ff)
+@function font($fz, $lh, $fw, $ff: 'NotoSans')
   @return $fw math.div(math.floor(math.div($fz, 16) * 100), 100) + em / math.div(math.floor(math.div($lh, $fz) * 100), 100) + em $ff
 
 @function percent($el, $max)
