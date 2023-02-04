@@ -6,5 +6,6 @@ export const useListStore = defineStore('list', () => {
   const edit = ref(false)
   const type = ref('tag')
   const toggle_edit = () => edit.value = !edit.value
-  return { list, edit, type, toggle_edit }
+  const toggle_type = value => type.value = value
+  return { list, edit, type, toggle_edit, toggle_type }
 })

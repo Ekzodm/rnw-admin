@@ -36,13 +36,18 @@ const flag = ref(false)
   &-hide
     background: $white
     position: absolute
-    top: 100%
-    left: 0
-    width: 100%
+    top: 105%
+    left: em(-13, 16)
+    min-width: calc(100% + em(17, 16))
     z-index: 10
     border-radius: 10px
   &-list
     display: flex
     flex-direction: column
     align-items: flex-start
+    gap: em(4, 16)
+    padding: em(8, 16) 0
+    box-shadow: 0 18px 30px rgba(56, 32, 123, .15)
+    border-radius: 10px
+    width: 100%
 </style>

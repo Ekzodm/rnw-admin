@@ -43,19 +43,20 @@ onUnmounted(() => {
   justify-content: center
   z-index: 1000
   &_background
-    background: rgba(0,0,0,.5)
+    background: rgba(2, 10, 53, .2)
     z-index: 1001
   &_wrapper
     background: $white
     border-radius: em(20, 16)
-    padding: em(45, 16)
+    padding: em(30, 16) em(60, 16) em(60, 16)
     position: relative
     display: flex
     flex-direction: column
     z-index: 1002
-    max-height: 90vh
-    overflow-y: auto
-    overflow-x: hidden
+    box-shadow: 0 18px 30px rgba(56, 32, 123, .15)
+    background: $type
+    max-width: em(550, 16)
+    width: 100%
     &::-webkit-scrollbar
       width: 0
   @media only screen and (max-width: 480px)

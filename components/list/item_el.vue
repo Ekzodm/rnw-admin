@@ -1,6 +1,6 @@
 <template lang="pug">
 .list-item
-  NuxtLink.list-item_link(v-if='!checkbox_list.edit' :to='`list/${item?.id}`') {{item?.title}}
+  NuxtLink.list-item_link(v-if='!checkbox_list.edit' :to='`/list/${item?.id}`') {{item?.title}}
   ElementsCheckboxEl(v-else :text='item?.title' :id='item?.id' v-model:checked='checkbox_list.list[item?.id]')
 </template>
 

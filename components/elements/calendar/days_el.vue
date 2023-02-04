@@ -1,5 +1,5 @@
 <template lang="pug">
-button.calendar-days_el(:class='[item?.class, active_class && "active", item?.range && "range"]' @click.prevent='active()')
+button.calendar-days_el(:class='[item?.class, active_class && "active", item?.range && "range", active_index > 0 ? "range--stop": "range--start"]' @click.prevent='active()')
   span {{item?.value}}
 </template>
 
@@ -15,6 +15,7 @@ const props = defineProps({
 const emit = defineEmits(['active'])
 const active = () => emit('active', props.idx)
 const active_class = computed(() => props.active.includes(props.idx))
+const active_index = computed(() => props.active.indexOf(props.idx))
 
 </script>
 
@@ -45,11 +46,11 @@ const active_class = computed(() => props.active.includes(props.idx))
       background: $dblue
       color: $white
       border-radius: 100%
-    &.range
-      &:first-child
+    &.range      
+      &--start
         &::before
           border-radius: em(40, 16) 0 0 em(40, 16)
-      &:last-child
+      &--stop
         &::before
           border-radius: 0 em(40, 16) em(40, 16) 0
   &.range

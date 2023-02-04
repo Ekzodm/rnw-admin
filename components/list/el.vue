@@ -11,11 +11,16 @@
 <script setup>
 
 import { ref } from 'vue'
+import { useListStore } from '~/store/list'
 
+const list = useListStore()
 const sort_buttons = [{ title: 'Теги', path: 'tag' }, { title: 'Коллекции', path: 'collection' },{ title: 'Категории', path: 'category' }]
 const active = ref(0) // Активный индекс
 const search = ref('') // Поиск
-const toggle_active = idx => active.value = idx
+const toggle_active = idx => {
+  active.value = idx
+  list.toggle_type(sort_buttons[idx].path)
+}
 </script>
 
 <style lang="sass" scoped>

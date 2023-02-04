@@ -5,7 +5,7 @@
   form(@submit.prevent='authorization' novalidate)
     ElementsInputEl(type='text' placeholder='Логин' v-model='auth.login' :error='!!v$.login.$errors.length && "Введите логин"')
     ElementsInputEl(type='password' placeholder='Пароль' v-model='auth.password' :error='!!v$.login.$errors.length && "Введите пароль"')
-    ElementsButtonEl(title='Войти' type='submit')
+    ElementsButtonEl(title='Войти' type='submit' class='button--one')
 </template>
 
 <script setup>
