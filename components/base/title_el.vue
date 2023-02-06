@@ -1,6 +1,6 @@
 <template lang="pug">
 .title
-  template(v-if='type')
+  template(v-if='page')
     h1 {{title}}
   template(v-else)
     h3 {{title}}
@@ -19,5 +19,5 @@ const props = defineProps({
 .title
   *
     color: $dblue
-    font: font(24, 32, 700, 'NotoSans')
+    font: font(24, 32, 700)
 </style>

@@ -1,14 +1,21 @@
 <template lang="pug">
 .personal
   BaseTitleEl(:title='title' :page='false')
-  .personal-grid
-    ProfileEl
+  template(v-if='personal?.pending')
+    .personal-grid
+      ProfilePersonalPreloaderEl(v-for='item, idx in 3' :key='idx')
+  template(v-else-if='personal?.error')
+    .personal-grid
+  template(v-else)
+    .personal-grid
+      ProfilePersonalItemEl(v-for='item in personal.data' :key='item.id' :item='item')
 </template>
 
 <script setup>
 
 const props = defineProps({
-  title: { type: String, default: '' }
+  title: { type: String, default: '' },
+  personal: { type: Object, required: true }
 })
 
 </script>

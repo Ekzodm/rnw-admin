@@ -5,7 +5,7 @@
   button.progress-line_track(@click.prevent='toggle_active' :class='[active && "active"]')
     .progress-line_track-el(:style='{ width: +content?.taped * 100 / +content?.max + "%" }' @mouseover="show_clue($event, true)" @mouseleave="show_clue($event, false)")
       span {{content?.taped}}
-      BaseClueEl(v-if='clue' text='Нажмите для пополнения колекции' :x='coordinate + "px"')
+      BaseClueEl(v-if='clue' text='Нажмите для пополнения коллекции' :x='coordinate + "px"')
     .progress-line_user(v-if='active')
       span {{user_name}}
 </template>

@@ -4,25 +4,30 @@
     BaseSvgEl(title='user')
   .profile-info
     .profile-info_name
-      span {{store_auth?.profile?.profile?.name}} {{store_auth?.profile?.profile?.surname}} 
+      span {{name}} 
     .profile-info_role
       span {{role}}
 </template>
 
 <script setup>
 
-import { useAuthStore } from "~/store/auth"
 import { computed } from 'vue'
+import { auth_request } from '~/service/fetch_wrapper'
 
-const store_auth = useAuthStore()
+const props = defineProps({
+  profile: { type: [String, Object], reauired: true }
+})
+
+const { data } = await auth_request(`/user?id=${props.profile}`)
+const name = computed(() => data.value.profile ? `${data.value.profile.name} ${data.value.profile.surname}` : data.value.login)
 const role = computed(() => {
-  switch (store_auth?.profile?.role) {
+  switch (data.value.role) {
     case 'admin':
       return 'Админ'
     case 'moderator':
       return 'Модератор'
     default:
-      return `id: ${store_auth?.profile?.id}`
+      return `id: ${props.profile}`
   }
 })
 
